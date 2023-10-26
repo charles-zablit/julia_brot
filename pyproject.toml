@@ -1,0 +1,33 @@
+[build-system]
+# AVOID CHANGING REQUIRES: IT WILL BE UPDATED BY PYSCAFFOLD!
+requires = ["setuptools>=46.1.0", "setuptools_scm[toml]>=5"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools_scm]
+# For smarter version schemes and other configuration options,
+# check out https://github.com/pypa/setuptools_scm
+version_scheme = "no-guess-dev"
+
+[project]
+name = "julia_brot"
+authors = [
+    {name = "Charles Zablit", email = "charles.zablit@ec-nantes.fr"},
+]
+description = "Library to generate beautiful Mandelbrot and Julia set plots directly from the CLI."
+readme = "README.rst"
+requires-python = ">=3.9"
+keywords = ["one", "two"]
+license = { file = "LICENSE.txt" }
+classifiers = [
+    "Programming Language :: Python :: 3",
+]
+dependencies = [
+    "matplotlib >= 3.8.0",
+    "numpy >= 1.26.1",
+    'importlib-metadata; python_version<"3.8"',
+]
+dynamic = ["version"]
+
+[project.scripts]
+MandelBrotPlot = "julia_brot.mandelbrot_set:_plot_mandelbrot_cli"
+JuliaPlot = "julia_brot.julia_set:_plot_julia_cli"

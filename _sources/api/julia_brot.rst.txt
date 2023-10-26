@@ -1,0 +1,37 @@
+julia\_brot package
+===================
+
+Submodules
+----------
+
+julia\_brot.common module
+-------------------------
+
+.. automodule:: julia_brot.common
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+julia\_brot.julia\_set module
+-----------------------------
+
+.. automodule:: julia_brot.julia_set
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+julia\_brot.mandelbrot\_set module
+----------------------------------
+
+.. automodule:: julia_brot.mandelbrot_set
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: julia_brot
+   :members:
+   :undoc-members:
+   :show-inheritance:

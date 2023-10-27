@@ -1,4 +1,5 @@
 import logging
+import os
 import sys
 from typing import Optional
 
@@ -8,7 +9,8 @@ from PIL import Image
 
 from .common import _handle_img, _normalize, _parse_args, _setup_logging
 
-from julia_brot.mandelbrot import fast_mandelbrot
+if os.getenv("DOCS_BUILD", 0) == 0:
+    from julia_brot.mandelbrot import fast_mandelbrot
 
 
 def _fast_mandelbrot(zmin: complex, zmax: complex, pixel_size: float, max_iter: int):

@@ -51,11 +51,16 @@ jobs:
           $tar_file = Get-ChildItem -Path $folder_path -Filter "*.tar.gz" | Select-Object -First 1
           Move-Item -Path $tar_file.FullName -Destination "$folder_path/julia_brot-${{ github.event.release.tag_name }}-${{ matrix.target }}.tar.gz"
         shell: powershell
-      - name: Upload tarballs artifacts
+      - name: Upload tarballs artifact
         uses: actions/upload-artifact@v3
         with:
           name: '${{ matrix.target }}-tar'
           path: dist/*.tar.gz
+      - name: Upload wheel artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: '${{ matrix.target }}-whl'
+          path: dist/*.whl
 
   github:
     name: Publish releases
@@ -67,6 +72,21 @@ jobs:
       - uses: actions/download-artifact@v3
       - name: Publish binaries
         run: |
-          gh release upload ${{ github.ref_name }} $(find . -iname *.tar.gz)
+          whl_files=($(find . -iname "*.whl"))
+          if [ ${#whl_files[@]} -eq 0 ]; then
+            echo "No .whl files found."
+            exit 1
+          fi
+          for whl_file in "${whl_files[@]}"; do
+            gh release upload "${{ github.ref_name }}" "$whl_file"
+          done
+          tar_files=($(find . -iname "*.tar.gz"))
+          if [ ${#tar_files[@]} -eq 0 ]; then
+            echo "No .tar.gz files found."
+            exit 1
+          fi
+          for tar_file in "${tar_files[@]}"; do
+            gh release upload "${{ github.ref_name }}" "$tar_file"
+          done
         env:
           GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'

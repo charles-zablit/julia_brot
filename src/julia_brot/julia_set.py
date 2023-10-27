@@ -7,7 +7,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 from PIL import Image
 
-from julia_brot.julia import fast_julia
+if os.getenv("DOCS_BUILD", 0) == 0:
+    from julia_brot.julia import fast_julia
 
 from .common import _handle_img, _normalize, _parse_args, _setup_logging
 

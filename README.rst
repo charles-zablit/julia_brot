@@ -16,10 +16,10 @@ Installation
 
 Install from release (recommended)
 ----
-1. Download the latest release from the `releases page <https://github.com/charles-zablit/julia_brot/releases/>`_ for your platform.
+1. Download the latest wheel release from the `releases page <https://github.com/charles-zablit/julia_brot/releases/>`_ for your platform. If your platform is not listed, please see below to install from source.
 2. Run pip install on it::
 
-   pip install <path-to-tar>
+   pip install <path-to-whl>
 
 Install from source
 ----

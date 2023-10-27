@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>julia_brot package &#8212; julia_brot unknown documentation</title>
+    <title>julia_brot package &#8212; julia_brot 0.1.0 documentation</title>
   
   
   
@@ -35,7 +35,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686" />
   <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=c5ced968eda925caa686"></script>
 
-    <script src="../_static/documentation_options.js?v=3f1b9271"></script>
+    <script src="../_static/documentation_options.js?v=01f34227"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'api/julia_brot';</script>
@@ -114,7 +114,7 @@
   
   
   
-    <p class="title logo__title">julia_brot unknown documentation</p>
+    <p class="title logo__title">julia_brot 0.1.0 documentation</p>
   
 </a></div>
     
@@ -404,23 +404,249 @@ document.write(`
 <section id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading">#</a></h2>
 </section>
-<section id="julia-brot-common-module">
-<h2>julia_brot.common module<a class="headerlink" href="#julia-brot-common-module" title="Link to this heading">#</a></h2>
+<section id="module-julia_brot.common">
+<span id="julia-brot-common-module"></span><h2>julia_brot.common module<a class="headerlink" href="#module-julia_brot.common" title="Link to this heading">#</a></h2>
 </section>
 <section id="julia-brot-julia-module">
 <h2>julia_brot.julia module<a class="headerlink" href="#julia-brot-julia-module" title="Link to this heading">#</a></h2>
 </section>
-<section id="julia-brot-julia-set-module">
-<h2>julia_brot.julia_set module<a class="headerlink" href="#julia-brot-julia-set-module" title="Link to this heading">#</a></h2>
+<section id="module-julia_brot.julia_set">
+<span id="julia-brot-julia-set-module"></span><h2>julia_brot.julia_set module<a class="headerlink" href="#module-julia_brot.julia_set" title="Link to this heading">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="julia_brot.julia_set.is_in_julia">
+<span class="sig-prename descclassname"><span class="pre">julia_brot.julia_set.</span></span><span class="sig-name descname"><span class="pre">is_in_julia</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">z</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3.10/library/functions.html#complex" title="(in Python v3.10)"><span class="pre">complex</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">c</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3.10/library/functions.html#complex" title="(in Python v3.10)"><span class="pre">complex</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_iter</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3.10/library/functions.html#int" title="(in Python v3.10)"><span class="pre">int</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3.10/library/functions.html#bool" title="(in Python v3.10)"><span class="pre">bool</span></a></span></span><a class="reference internal" href="../_modules/julia_brot/julia_set.html#is_in_julia"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#julia_brot.julia_set.is_in_julia" title="Link to this definition">#</a></dt>
+<dd><p>Checks if a point is in a given Julia set for a maximum number of iterations.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>z</strong> (<a class="reference external" href="https://docs.python.org/3.10/library/functions.html#complex" title="(in Python v3.10)"><em>complex</em></a>) – Point to check for.</p></li>
+<li><p><strong>c</strong> (<a class="reference external" href="https://docs.python.org/3.10/library/functions.html#complex" title="(in Python v3.10)"><em>complex</em></a>) – Constant value of the Julia set.</p></li>
+<li><p><strong>max_iter</strong> (<a class="reference external" href="https://docs.python.org/3.10/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a>) – Maximum number of iterations.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><cite>True</cite> if the point is in the set, <cite>False</cite> otherwise.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3.10/library/functions.html#bool" title="(in Python v3.10)">bool</a></p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">is_in_julia</span><span class="p">(</span><span class="n">z</span><span class="o">=</span><span class="mf">0.25</span> <span class="o">+</span> <span class="mf">0.25</span><span class="n">j</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="mf">0.25</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_in_julia</span><span class="p">(</span><span class="n">z</span><span class="o">=</span><span class="mf">0.25</span> <span class="o">+</span> <span class="mf">0.25</span><span class="n">j</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span> <span class="n">max_iter</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="julia_brot.julia_set.plot_julia">
+<span class="sig-prename descclassname"><span class="pre">julia_brot.julia_set.</span></span><span class="sig-name descname"><span class="pre">plot_julia</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">c</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3.10/library/functions.html#complex" title="(in Python v3.10)"><span class="pre">complex</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0j</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zmin</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3.10/library/functions.html#complex" title="(in Python v3.10)"><span class="pre">complex</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">-2</span> <span class="pre">-</span> <span class="pre">2j</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zmax</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3.10/library/functions.html#complex" title="(in Python v3.10)"><span class="pre">complex</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">2</span> <span class="pre">+</span> <span class="pre">2j</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pixel_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3.10/library/functions.html#float" title="(in Python v3.10)"><span class="pre">float</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_iter</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3.10/library/functions.html#int" title="(in Python v3.10)"><span class="pre">int</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">figname</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3.10/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3.10/library/stdtypes.html#bytes" title="(in Python v3.10)"><span class="pre">bytes</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3.10/library/os.html#os.PathLike" title="(in Python v3.10)"><span class="pre">PathLike</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3.10/library/constants.html#None" title="(in Python v3.10)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/julia_brot/julia_set.html#plot_julia"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#julia_brot.julia_set.plot_julia" title="Link to this definition">#</a></dt>
+<dd><p>Plot the Julia set corresponding to the given <cite>c</cite> constant.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>c</strong> (<a class="reference external" href="https://docs.python.org/3.10/library/functions.html#complex" title="(in Python v3.10)"><em>complex</em></a>) – Julia constant.</p></li>
+<li><p><strong>zmin</strong> (<a class="reference external" href="https://docs.python.org/3.10/library/functions.html#complex" title="(in Python v3.10)"><em>complex</em></a>) – Lower bound limit.</p></li>
+<li><p><strong>zmax</strong> (<a class="reference external" href="https://docs.python.org/3.10/library/functions.html#complex" title="(in Python v3.10)"><em>complex</em></a>) – Upper bound limit.</p></li>
+<li><p><strong>pixel_size</strong> (<a class="reference external" href="https://docs.python.org/3.10/library/functions.html#float" title="(in Python v3.10)"><em>float</em></a>) – Pixel size of the resulting plot.</p></li>
+<li><p><strong>max_iter</strong> (<a class="reference external" href="https://docs.python.org/3.10/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a>) – Maximum number of iterations.</p></li>
+<li><p><strong>figname</strong> (<em>Optional</em><em>[</em><em>Union</em><em>[</em><a class="reference external" href="https://docs.python.org/3.10/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3.10/library/stdtypes.html#bytes" title="(in Python v3.10)"><em>bytes</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3.10/library/os.html#os.PathLike" title="(in Python v3.10)"><em>os.PathLike</em></a><em>]</em><em>]</em>) – Optional path to save the image to. Will not be saved if None.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">plot_julia</span><span class="p">()</span>
+<span class="go">None</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plot_julia</span><span class="p">(</span><span class="n">c</span><span class="o">=-</span><span class="mf">0.8</span> <span class="o">+</span> <span class="mf">0.156</span><span class="n">j</span><span class="p">,</span> <span class="n">zmin</span><span class="o">=-</span><span class="mi">2</span><span class="o">-</span><span class="mi">1</span><span class="n">j</span><span class="p">,</span>
+<span class="go">               zmax=2+1j,</span>
+<span class="go">               pixel_size=5e-4,</span>
+<span class="go">               max_iter=100, figname=figname)</span>
+<span class="go">None</span>
+</pre></div>
+</div>
+</dd></dl>
+
 </section>
 <section id="julia-brot-mandelbrot-module">
 <h2>julia_brot.mandelbrot module<a class="headerlink" href="#julia-brot-mandelbrot-module" title="Link to this heading">#</a></h2>
 </section>
-<section id="julia-brot-mandelbrot-set-module">
-<h2>julia_brot.mandelbrot_set module<a class="headerlink" href="#julia-brot-mandelbrot-set-module" title="Link to this heading">#</a></h2>
+<section id="module-julia_brot.mandelbrot_set">
+<span id="julia-brot-mandelbrot-set-module"></span><h2>julia_brot.mandelbrot_set module<a class="headerlink" href="#module-julia_brot.mandelbrot_set" title="Link to this heading">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="julia_brot.mandelbrot_set.is_in_mandelbrot">
+<span class="sig-prename descclassname"><span class="pre">julia_brot.mandelbrot_set.</span></span><span class="sig-name descname"><span class="pre">is_in_mandelbrot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">c</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3.10/library/functions.html#complex" title="(in Python v3.10)"><span class="pre">complex</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_iter</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3.10/library/functions.html#int" title="(in Python v3.10)"><span class="pre">int</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3.10/library/functions.html#bool" title="(in Python v3.10)"><span class="pre">bool</span></a></span></span><a class="reference internal" href="../_modules/julia_brot/mandelbrot_set.html#is_in_mandelbrot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#julia_brot.mandelbrot_set.is_in_mandelbrot" title="Link to this definition">#</a></dt>
+<dd><p>Checks if a point is in the Mandelbrot set for a maximum number of iterations.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>c</strong> (<a class="reference external" href="https://docs.python.org/3.10/library/functions.html#complex" title="(in Python v3.10)"><em>complex</em></a>) – Point to check for.</p></li>
+<li><p><strong>max_iter</strong> (<a class="reference external" href="https://docs.python.org/3.10/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a>) – Maximum number of iterations.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><cite>True</cite> if the point is in the set, <cite>False</cite> otherwise.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3.10/library/functions.html#bool" title="(in Python v3.10)">bool</a></p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">is_in_mandelbrot</span><span class="p">(</span><span class="n">c</span><span class="o">=</span><span class="mf">0.251</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_in_mandelbrot</span><span class="p">(</span><span class="n">c</span><span class="o">=</span><span class="mf">0.251</span><span class="p">,</span> <span class="n">max_iter</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="julia_brot.mandelbrot_set.plot_mandelbrot">
+<span class="sig-prename descclassname"><span class="pre">julia_brot.mandelbrot_set.</span></span><span class="sig-name descname"><span class="pre">plot_mandelbrot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zmin</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3.10/library/functions.html#complex" title="(in Python v3.10)"><span class="pre">complex</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">-2</span> <span class="pre">-</span> <span class="pre">2j</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zmax</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3.10/library/functions.html#complex" title="(in Python v3.10)"><span class="pre">complex</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">2</span> <span class="pre">+</span> <span class="pre">2j</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pixel_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3.10/library/functions.html#float" title="(in Python v3.10)"><span class="pre">float</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_iter</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3.10/library/functions.html#int" title="(in Python v3.10)"><span class="pre">int</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">600</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">figname</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3.10/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3.10/library/constants.html#None" title="(in Python v3.10)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/julia_brot/mandelbrot_set.html#plot_mandelbrot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#julia_brot.mandelbrot_set.plot_mandelbrot" title="Link to this definition">#</a></dt>
+<dd><p>Plot the Mandelbrot set.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>zmin</strong> (<a class="reference external" href="https://docs.python.org/3.10/library/functions.html#complex" title="(in Python v3.10)"><em>complex</em></a>) – Lower bound limit.</p></li>
+<li><p><strong>zmax</strong> (<a class="reference external" href="https://docs.python.org/3.10/library/functions.html#complex" title="(in Python v3.10)"><em>complex</em></a>) – Upper bound limit.</p></li>
+<li><p><strong>pixel_size</strong> (<a class="reference external" href="https://docs.python.org/3.10/library/functions.html#float" title="(in Python v3.10)"><em>float</em></a>) – Pixel size of the resulting plot.</p></li>
+<li><p><strong>max_iter</strong> (<a class="reference external" href="https://docs.python.org/3.10/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a>) – Maximum number of iterations.</p></li>
+<li><p><strong>figname</strong> (<em>Optional</em><em>[</em><em>Union</em><em>[</em><a class="reference external" href="https://docs.python.org/3.10/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3.10/library/stdtypes.html#bytes" title="(in Python v3.10)"><em>bytes</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3.10/library/os.html#os.PathLike" title="(in Python v3.10)"><em>os.PathLike</em></a><em>]</em><em>]</em>) – Optional path to save the plotted image to. Will not be saved if None.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">plot_mandelbrot</span><span class="p">()</span>
+<span class="go">None</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plot_mandelbrot</span><span class="p">(</span>
+<span class="go">        zmin=-0.7440 + 0.1305j,</span>
+<span class="go">        zmax=-0.7425 + 0.1320j,</span>
+<span class="go">        pixel_size=5e-7,</span>
+<span class="go">        max_iter=200,</span>
+<span class="go">        figname=figname,</span>
+<span class="go">    )</span>
+<span class="go">None</span>
+</pre></div>
+</div>
+</dd></dl>
+
 </section>
-<section id="module-contents">
-<h2>Module contents<a class="headerlink" href="#module-contents" title="Link to this heading">#</a></h2>
+<section id="module-julia_brot">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-julia_brot" title="Link to this heading">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="julia_brot.is_in_julia">
+<span class="sig-prename descclassname"><span class="pre">julia_brot.</span></span><span class="sig-name descname"><span class="pre">is_in_julia</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">z</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3.10/library/functions.html#complex" title="(in Python v3.10)"><span class="pre">complex</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">c</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3.10/library/functions.html#complex" title="(in Python v3.10)"><span class="pre">complex</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_iter</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3.10/library/functions.html#int" title="(in Python v3.10)"><span class="pre">int</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3.10/library/functions.html#bool" title="(in Python v3.10)"><span class="pre">bool</span></a></span></span><a class="reference internal" href="../_modules/julia_brot/julia_set.html#is_in_julia"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#julia_brot.is_in_julia" title="Link to this definition">#</a></dt>
+<dd><p>Checks if a point is in a given Julia set for a maximum number of iterations.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>z</strong> (<a class="reference external" href="https://docs.python.org/3.10/library/functions.html#complex" title="(in Python v3.10)"><em>complex</em></a>) – Point to check for.</p></li>
+<li><p><strong>c</strong> (<a class="reference external" href="https://docs.python.org/3.10/library/functions.html#complex" title="(in Python v3.10)"><em>complex</em></a>) – Constant value of the Julia set.</p></li>
+<li><p><strong>max_iter</strong> (<a class="reference external" href="https://docs.python.org/3.10/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a>) – Maximum number of iterations.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><cite>True</cite> if the point is in the set, <cite>False</cite> otherwise.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3.10/library/functions.html#bool" title="(in Python v3.10)">bool</a></p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">is_in_julia</span><span class="p">(</span><span class="n">z</span><span class="o">=</span><span class="mf">0.25</span> <span class="o">+</span> <span class="mf">0.25</span><span class="n">j</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="mf">0.25</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_in_julia</span><span class="p">(</span><span class="n">z</span><span class="o">=</span><span class="mf">0.25</span> <span class="o">+</span> <span class="mf">0.25</span><span class="n">j</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span> <span class="n">max_iter</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="julia_brot.is_in_mandelbrot">
+<span class="sig-prename descclassname"><span class="pre">julia_brot.</span></span><span class="sig-name descname"><span class="pre">is_in_mandelbrot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">c</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3.10/library/functions.html#complex" title="(in Python v3.10)"><span class="pre">complex</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_iter</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3.10/library/functions.html#int" title="(in Python v3.10)"><span class="pre">int</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3.10/library/functions.html#bool" title="(in Python v3.10)"><span class="pre">bool</span></a></span></span><a class="reference internal" href="../_modules/julia_brot/mandelbrot_set.html#is_in_mandelbrot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#julia_brot.is_in_mandelbrot" title="Link to this definition">#</a></dt>
+<dd><p>Checks if a point is in the Mandelbrot set for a maximum number of iterations.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>c</strong> (<a class="reference external" href="https://docs.python.org/3.10/library/functions.html#complex" title="(in Python v3.10)"><em>complex</em></a>) – Point to check for.</p></li>
+<li><p><strong>max_iter</strong> (<a class="reference external" href="https://docs.python.org/3.10/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a>) – Maximum number of iterations.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><cite>True</cite> if the point is in the set, <cite>False</cite> otherwise.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3.10/library/functions.html#bool" title="(in Python v3.10)">bool</a></p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">is_in_mandelbrot</span><span class="p">(</span><span class="n">c</span><span class="o">=</span><span class="mf">0.251</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_in_mandelbrot</span><span class="p">(</span><span class="n">c</span><span class="o">=</span><span class="mf">0.251</span><span class="p">,</span> <span class="n">max_iter</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="julia_brot.plot_julia">
+<span class="sig-prename descclassname"><span class="pre">julia_brot.</span></span><span class="sig-name descname"><span class="pre">plot_julia</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">c</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3.10/library/functions.html#complex" title="(in Python v3.10)"><span class="pre">complex</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0j</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zmin</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3.10/library/functions.html#complex" title="(in Python v3.10)"><span class="pre">complex</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">-2</span> <span class="pre">-</span> <span class="pre">2j</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zmax</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3.10/library/functions.html#complex" title="(in Python v3.10)"><span class="pre">complex</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">2</span> <span class="pre">+</span> <span class="pre">2j</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pixel_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3.10/library/functions.html#float" title="(in Python v3.10)"><span class="pre">float</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_iter</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3.10/library/functions.html#int" title="(in Python v3.10)"><span class="pre">int</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">figname</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3.10/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3.10/library/stdtypes.html#bytes" title="(in Python v3.10)"><span class="pre">bytes</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3.10/library/os.html#os.PathLike" title="(in Python v3.10)"><span class="pre">PathLike</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3.10/library/constants.html#None" title="(in Python v3.10)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/julia_brot/julia_set.html#plot_julia"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#julia_brot.plot_julia" title="Link to this definition">#</a></dt>
+<dd><p>Plot the Julia set corresponding to the given <cite>c</cite> constant.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>c</strong> (<a class="reference external" href="https://docs.python.org/3.10/library/functions.html#complex" title="(in Python v3.10)"><em>complex</em></a>) – Julia constant.</p></li>
+<li><p><strong>zmin</strong> (<a class="reference external" href="https://docs.python.org/3.10/library/functions.html#complex" title="(in Python v3.10)"><em>complex</em></a>) – Lower bound limit.</p></li>
+<li><p><strong>zmax</strong> (<a class="reference external" href="https://docs.python.org/3.10/library/functions.html#complex" title="(in Python v3.10)"><em>complex</em></a>) – Upper bound limit.</p></li>
+<li><p><strong>pixel_size</strong> (<a class="reference external" href="https://docs.python.org/3.10/library/functions.html#float" title="(in Python v3.10)"><em>float</em></a>) – Pixel size of the resulting plot.</p></li>
+<li><p><strong>max_iter</strong> (<a class="reference external" href="https://docs.python.org/3.10/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a>) – Maximum number of iterations.</p></li>
+<li><p><strong>figname</strong> (<em>Optional</em><em>[</em><em>Union</em><em>[</em><a class="reference external" href="https://docs.python.org/3.10/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3.10/library/stdtypes.html#bytes" title="(in Python v3.10)"><em>bytes</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3.10/library/os.html#os.PathLike" title="(in Python v3.10)"><em>os.PathLike</em></a><em>]</em><em>]</em>) – Optional path to save the image to. Will not be saved if None.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">plot_julia</span><span class="p">()</span>
+<span class="go">None</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plot_julia</span><span class="p">(</span><span class="n">c</span><span class="o">=-</span><span class="mf">0.8</span> <span class="o">+</span> <span class="mf">0.156</span><span class="n">j</span><span class="p">,</span> <span class="n">zmin</span><span class="o">=-</span><span class="mi">2</span><span class="o">-</span><span class="mi">1</span><span class="n">j</span><span class="p">,</span>
+<span class="go">               zmax=2+1j,</span>
+<span class="go">               pixel_size=5e-4,</span>
+<span class="go">               max_iter=100, figname=figname)</span>
+<span class="go">None</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="julia_brot.plot_mandelbrot">
+<span class="sig-prename descclassname"><span class="pre">julia_brot.</span></span><span class="sig-name descname"><span class="pre">plot_mandelbrot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zmin</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3.10/library/functions.html#complex" title="(in Python v3.10)"><span class="pre">complex</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">-2</span> <span class="pre">-</span> <span class="pre">2j</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zmax</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3.10/library/functions.html#complex" title="(in Python v3.10)"><span class="pre">complex</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">2</span> <span class="pre">+</span> <span class="pre">2j</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pixel_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3.10/library/functions.html#float" title="(in Python v3.10)"><span class="pre">float</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_iter</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3.10/library/functions.html#int" title="(in Python v3.10)"><span class="pre">int</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">600</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">figname</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3.10/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3.10/library/constants.html#None" title="(in Python v3.10)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/julia_brot/mandelbrot_set.html#plot_mandelbrot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#julia_brot.plot_mandelbrot" title="Link to this definition">#</a></dt>
+<dd><p>Plot the Mandelbrot set.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>zmin</strong> (<a class="reference external" href="https://docs.python.org/3.10/library/functions.html#complex" title="(in Python v3.10)"><em>complex</em></a>) – Lower bound limit.</p></li>
+<li><p><strong>zmax</strong> (<a class="reference external" href="https://docs.python.org/3.10/library/functions.html#complex" title="(in Python v3.10)"><em>complex</em></a>) – Upper bound limit.</p></li>
+<li><p><strong>pixel_size</strong> (<a class="reference external" href="https://docs.python.org/3.10/library/functions.html#float" title="(in Python v3.10)"><em>float</em></a>) – Pixel size of the resulting plot.</p></li>
+<li><p><strong>max_iter</strong> (<a class="reference external" href="https://docs.python.org/3.10/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a>) – Maximum number of iterations.</p></li>
+<li><p><strong>figname</strong> (<em>Optional</em><em>[</em><em>Union</em><em>[</em><a class="reference external" href="https://docs.python.org/3.10/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3.10/library/stdtypes.html#bytes" title="(in Python v3.10)"><em>bytes</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3.10/library/os.html#os.PathLike" title="(in Python v3.10)"><em>os.PathLike</em></a><em>]</em><em>]</em>) – Optional path to save the plotted image to. Will not be saved if None.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">plot_mandelbrot</span><span class="p">()</span>
+<span class="go">None</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plot_mandelbrot</span><span class="p">(</span>
+<span class="go">        zmin=-0.7440 + 0.1305j,</span>
+<span class="go">        zmax=-0.7425 + 0.1320j,</span>
+<span class="go">        pixel_size=5e-7,</span>
+<span class="go">        max_iter=200,</span>
+<span class="go">        figname=figname,</span>
+<span class="go">    )</span>
+<span class="go">None</span>
+</pre></div>
+</div>
+</dd></dl>
+
 </section>
 </section>
 
@@ -459,12 +685,26 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submodules">Submodules</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#julia-brot-common-module">julia_brot.common module</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-julia_brot.common">julia_brot.common module</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#julia-brot-julia-module">julia_brot.julia module</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#julia-brot-julia-set-module">julia_brot.julia_set module</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-julia_brot.julia_set">julia_brot.julia_set module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#julia_brot.julia_set.is_in_julia"><code class="docutils literal notranslate"><span class="pre">is_in_julia()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#julia_brot.julia_set.plot_julia"><code class="docutils literal notranslate"><span class="pre">plot_julia()</span></code></a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#julia-brot-mandelbrot-module">julia_brot.mandelbrot module</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#julia-brot-mandelbrot-set-module">julia_brot.mandelbrot_set module</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-contents">Module contents</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-julia_brot.mandelbrot_set">julia_brot.mandelbrot_set module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#julia_brot.mandelbrot_set.is_in_mandelbrot"><code class="docutils literal notranslate"><span class="pre">is_in_mandelbrot()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#julia_brot.mandelbrot_set.plot_mandelbrot"><code class="docutils literal notranslate"><span class="pre">plot_mandelbrot()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-julia_brot">Module contents</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#julia_brot.is_in_julia"><code class="docutils literal notranslate"><span class="pre">is_in_julia()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#julia_brot.is_in_mandelbrot"><code class="docutils literal notranslate"><span class="pre">is_in_mandelbrot()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#julia_brot.plot_julia"><code class="docutils literal notranslate"><span class="pre">plot_julia()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#julia_brot.plot_mandelbrot"><code class="docutils literal notranslate"><span class="pre">plot_mandelbrot()</span></code></a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

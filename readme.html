@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>julia_brot &#8212; julia_brot 0.1.0 documentation</title>
+    <title>julia_brot &#8212; julia_brot unknown documentation</title>
   
   
   
@@ -35,7 +35,7 @@
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686" />
   <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=c5ced968eda925caa686"></script>
 
-    <script src="_static/documentation_options.js?v=01f34227"></script>
+    <script src="_static/documentation_options.js?v=3f1b9271"></script>
     <script src="_static/doctools.js?v=888ff710"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'readme';</script>
@@ -115,7 +115,7 @@
   
   
   
-    <p class="title logo__title">julia_brot 0.1.0 documentation</p>
+    <p class="title logo__title">julia_brot unknown documentation</p>
   
 </a></div>
     
@@ -386,20 +386,55 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <span class="target" id="readme"></span><a class="reference external image-reference" href="https://pyscaffold.org/"><img alt="Project generated with PyScaffold" src="https://img.shields.io/badge/-PyScaffold-005CA0?logo=pyscaffold" /></a>
-<div class="line-block">
+  <span class="target" id="readme"></span><div class="line-block">
 <div class="line"><br /></div>
 </div>
 <section id="julia-brot">
 <h1>julia_brot<a class="headerlink" href="#julia-brot" title="Link to this heading">#</a></h1>
 <blockquote>
-<div><p>Add a short description here!</p>
+<div><p>Fast Python CLI Library for plotting the Mandelbrot and Julia sets.</p>
 </div></blockquote>
-<p>A longer description of your project goes here…</p>
-<section id="note">
-<span id="pyscaffold-notes"></span><h2>Note<a class="headerlink" href="#note" title="Link to this heading">#</a></h2>
-<p>This project has been set up using PyScaffold 4.5. For details and usage
-information on PyScaffold see <a class="reference external" href="https://pyscaffold.org/">https://pyscaffold.org/</a>.</p>
+<p>This project uses multi-threaded Cython to compute the representation of the Mandelbrot and Julia sets.</p>
+<section id="installation">
+<span id="pyscaffold-notes"></span><h2>Installation<a class="headerlink" href="#installation" title="Link to this heading">#</a></h2>
+<section id="install-from-source">
+<h3>Install from source<a class="headerlink" href="#install-from-source" title="Link to this heading">#</a></h3>
+<p>Clone the repository:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">charles</span><span class="o">-</span><span class="n">zablit</span><span class="o">/</span><span class="n">julia_brot</span><span class="o">.</span><span class="n">git</span>
+</pre></div>
+</div>
+<p>Install <cite>tox</cite> from Pypi:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">tox</span>
+</pre></div>
+</div>
+<p>Build the project:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tox</span> <span class="o">-</span><span class="n">e</span> <span class="n">build</span>
+</pre></div>
+</div>
+<p>Get the path of the <cite>.whl</cite> file in the newly generated <cite>dist</cite> folder:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span> <span class="n">dist</span><span class="o">/</span>
+</pre></div>
+</div>
+<p>Install the wheel like you would do for anyother library:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">&lt;</span><span class="n">path_to_wheel</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="documentation">
+<h2>Documentation<a class="headerlink" href="#documentation" title="Link to this heading">#</a></h2>
+<p><a class="reference external" href="https://charles-zablit.github.io/julia_brot/">https://charles-zablit.github.io/julia_brot/</a></p>
+</section>
+<section id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Link to this heading">#</a></h2>
+<section id="mandelbrot">
+<h3>Mandelbrot<a class="headerlink" href="#mandelbrot" title="Link to this heading">#</a></h3>
+<img alt="images/mandelbrot.png" src="images/mandelbrot.png" />
+</section>
+<section id="julia">
+<h3>Julia<a class="headerlink" href="#julia" title="Link to this heading">#</a></h3>
+<img alt="images/julia.png" src="images/julia.png" />
+</section>
 </section>
 </section>
 
@@ -446,7 +481,16 @@ information on PyScaffold see <a class="reference external" href="https://pyscaf
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#note">Note</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-from-source">Install from source</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#documentation">Documentation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mandelbrot">Mandelbrot</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#julia">Julia</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

@@ -12,10 +12,26 @@ julia\_brot.common module
    :undoc-members:
    :show-inheritance:
 
+julia\_brot.julia module
+------------------------
+
+.. automodule:: julia_brot.julia
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 julia\_brot.julia\_set module
 -----------------------------
 
 .. automodule:: julia_brot.julia_set
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+julia\_brot.mandelbrot module
+-----------------------------
+
+.. automodule:: julia_brot.mandelbrot
    :members:
    :undoc-members:
    :show-inheritance:

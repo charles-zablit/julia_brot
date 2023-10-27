@@ -72,21 +72,7 @@ jobs:
       - uses: actions/download-artifact@v3
       - name: Publish binaries
         run: |
-          whl_files=($(find . -iname "*.whl"))
-          if [ ${#whl_files[@]} -eq 0 ]; then
-            echo "No .whl files found."
-            exit 1
-          fi
-          for whl_file in "${whl_files[@]}"; do
-            gh release upload "${{ github.ref_name }}" "$whl_file"
-          done
-          tar_files=($(find . -iname "*.tar.gz"))
-          if [ ${#tar_files[@]} -eq 0 ]; then
-            echo "No .tar.gz files found."
-            exit 1
-          fi
-          for tar_file in "${tar_files[@]}"; do
-            gh release upload "${{ github.ref_name }}" "$tar_file"
-          done
+          find . -name '*.whl' -exec gh release upload "${{ github.ref_name }}" "{}" --clobber \;
+          find . -name '*.tar.gz' -exec gh release upload "${{ github.ref_name }}" "{}" --clobber \;
         env:
           GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'

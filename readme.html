@@ -386,17 +386,23 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <span class="target" id="readme"></span><div class="line-block">
-<div class="line"><br /></div>
-</div>
-<section id="julia-brot">
-<h1>julia_brot<a class="headerlink" href="#julia-brot" title="Link to this heading">#</a></h1>
+  <section id="julia-brot">
+<span id="readme"></span><h1>julia_brot<a class="headerlink" href="#julia-brot" title="Link to this heading">#</a></h1>
 <blockquote>
 <div><p>Fast Python CLI Library for plotting the Mandelbrot and Julia sets.</p>
 </div></blockquote>
 <p>This project uses multi-threaded Cython to compute the representation of the Mandelbrot and Julia sets.</p>
 <section id="installation">
 <span id="pyscaffold-notes"></span><h2>Installation<a class="headerlink" href="#installation" title="Link to this heading">#</a></h2>
+<section id="install-from-release-recommended">
+<h3>Install from release (recommended)<a class="headerlink" href="#install-from-release-recommended" title="Link to this heading">#</a></h3>
+<ol class="arabic">
+<li><p>Download the latest release from the <a class="reference external" href="https://github.com/charles-zablit/julia_brot/releases/">releases page</a> for your platform.</p></li>
+<li><p>Run pip install on it:</p>
+<p>pip install &lt;path-to-tar&gt;</p>
+</li>
+</ol>
+</section>
 <section id="install-from-source">
 <h3>Install from source<a class="headerlink" href="#install-from-source" title="Link to this heading">#</a></h3>
 <p>Clone the repository:</p>
@@ -453,9 +459,32 @@ document.write(`
          -o &quot;thunder-julia.png&quot;
 </pre></div>
 </div>
-<p>For more information run:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ JuliaPlot -h
-$ MandelbrotPlot -h
+<p>Parameters details:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="p">:</span> <span class="n">MandelBrotPlot</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">c</span> <span class="p">[</span><span class="n">C</span><span class="p">]]</span> <span class="p">[</span><span class="o">--</span><span class="n">zmin</span> <span class="p">[</span><span class="n">ZMIN</span><span class="p">]]</span> <span class="p">[</span><span class="o">--</span><span class="n">zmax</span> <span class="p">[</span><span class="n">ZMAX</span><span class="p">]]</span> <span class="p">[</span><span class="o">--</span><span class="n">pixel_size</span> <span class="p">[</span><span class="n">PIXEL_SIZE</span><span class="p">]]</span>
+                   <span class="p">[</span><span class="o">--</span><span class="nb">max</span><span class="o">-</span><span class="nb">iter</span> <span class="p">[</span><span class="n">MAX_ITER</span><span class="p">]]</span> <span class="p">[</span><span class="o">-</span><span class="n">o</span> <span class="p">[</span><span class="n">OUTPUT</span><span class="p">]]</span> <span class="p">[</span><span class="o">-</span><span class="n">d</span><span class="p">]</span>
+
+<span class="n">Mandelbrot</span> <span class="n">plotting</span> <span class="n">CLI</span><span class="o">.</span>
+
+<span class="n">options</span><span class="p">:</span>
+  <span class="o">-</span><span class="n">h</span><span class="p">,</span> <span class="o">--</span><span class="n">help</span>            <span class="n">show</span> <span class="n">this</span> <span class="n">help</span> <span class="n">message</span> <span class="ow">and</span> <span class="n">exit</span>
+  <span class="o">-</span><span class="n">c</span> <span class="p">[</span><span class="n">C</span><span class="p">],</span> <span class="o">--</span><span class="n">c</span> <span class="p">[</span><span class="n">C</span><span class="p">]</span>       <span class="n">Initial</span> <span class="n">value</span> <span class="n">of</span> <span class="n">the</span> <span class="n">Julia</span> <span class="nb">set</span> <span class="n">plot</span> <span class="p">(</span><span class="n">ex</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="mf">1.5</span><span class="n">j</span><span class="p">)</span>
+  <span class="o">--</span><span class="n">zmin</span> <span class="p">[</span><span class="n">ZMIN</span><span class="p">]</span>         <span class="n">Lower</span> <span class="n">bound</span> <span class="n">of</span> <span class="n">the</span> <span class="n">plot</span><span class="p">,</span> <span class="k">as</span> <span class="n">a</span> <span class="nb">complex</span> <span class="n">number</span> <span class="p">(</span><span class="n">ex</span><span class="p">:</span> <span class="o">-</span><span class="mi">2</span><span class="o">-</span><span class="mi">2</span><span class="n">j</span><span class="p">)</span>
+  <span class="o">--</span><span class="n">zmax</span> <span class="p">[</span><span class="n">ZMAX</span><span class="p">]</span>         <span class="n">Upper</span> <span class="n">bound</span> <span class="n">of</span> <span class="n">the</span> <span class="n">plot</span><span class="p">,</span> <span class="k">as</span> <span class="n">a</span> <span class="nb">complex</span> <span class="n">number</span> <span class="p">(</span><span class="n">ex</span><span class="p">:</span> <span class="mi">2</span><span class="o">+</span><span class="mi">2</span><span class="n">j</span><span class="p">)</span>
+  <span class="o">--</span><span class="n">pixel_size</span> <span class="p">[</span><span class="n">PIXEL_SIZE</span><span class="p">]</span>
+                        <span class="n">Pixel</span> <span class="n">size</span> <span class="n">of</span> <span class="n">the</span> <span class="n">generated</span> <span class="n">plot</span><span class="o">.</span> <span class="n">The</span> <span class="n">thigher</span> <span class="n">the</span> <span class="n">plot</span><span class="p">,</span> <span class="n">the</span> <span class="n">smaller</span> <span class="n">this</span> <span class="n">number</span>
+                        <span class="n">should</span> <span class="n">be</span><span class="o">.</span>
+  <span class="o">--</span><span class="nb">max</span><span class="o">-</span><span class="nb">iter</span> <span class="p">[</span><span class="n">MAX_ITER</span><span class="p">]</span>
+                        <span class="n">Number</span> <span class="n">of</span> <span class="n">iterations</span> <span class="n">to</span> <span class="n">generate</span> <span class="n">the</span> <span class="nb">set</span><span class="o">.</span>
+  <span class="o">-</span><span class="n">o</span> <span class="p">[</span><span class="n">OUTPUT</span><span class="p">],</span> <span class="o">--</span><span class="n">output</span> <span class="p">[</span><span class="n">OUTPUT</span><span class="p">]</span>
+                        <span class="n">Output</span> <span class="n">path</span> <span class="n">of</span> <span class="n">the</span> <span class="n">generated</span> <span class="n">plot</span><span class="o">.</span>
+  <span class="o">-</span><span class="n">d</span><span class="p">,</span> <span class="o">--</span><span class="n">debug</span>           <span class="n">Set</span> <span class="n">logging</span> <span class="n">level</span> <span class="n">to</span> <span class="n">DEBUG</span>
+</pre></div>
+</div>
+</section>
+<section id="running-the-tests">
+<h2>Running the tests<a class="headerlink" href="#running-the-tests" title="Link to this heading">#</a></h2>
+<p>With <cite>tox</cite> installed, you can run the tests from the root of the project using the following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tox</span>
 </pre></div>
 </div>
 </section>
@@ -505,6 +534,7 @@ $ MandelbrotPlot -h
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-from-release-recommended">Install from release (recommended)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-from-source">Install from source</a></li>
 </ul>
 </li>
@@ -515,6 +545,7 @@ $ MandelbrotPlot -h
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cli-usage-examples">CLI usage Examples</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-the-tests">Running the tests</a></li>
 </ul>
   </nav></div>
 

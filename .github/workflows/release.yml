@@ -72,6 +72,7 @@ jobs:
       - uses: actions/download-artifact@v3
       - name: Publish binaries
         run: |
+          ls
           find . -name '*.whl' -exec gh release upload "${{ github.ref_name }}" "{}" --clobber \;
           find . -name '*.tar.gz' -exec gh release upload "${{ github.ref_name }}" "{}" --clobber \;
         env:

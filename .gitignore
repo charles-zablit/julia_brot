@@ -52,3 +52,6 @@ MANIFEST
 .venv*/
 .conda*/
 .python-version
+
+# Cython .c files
+*.c

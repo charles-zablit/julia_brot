@@ -1,4 +1,5 @@
-from importlib.metadata import PackageNotFoundError, version  # pragma: no cover
+from importlib.metadata import PackageNotFoundError  # pragma: no cover
+from importlib.metadata import version
 
 __author__ = "Charles Zablit"
 __copyright__ = "Charles Zablit"
@@ -12,7 +13,7 @@ except PackageNotFoundError:  # pragma: no cover
 finally:
     del version, PackageNotFoundError
 
-from .mandelbrot_set import plot_mandelbrot
-from .julia_set import plot_julia
+from .julia_set import is_in_julia, plot_julia
+from .mandelbrot_set import is_in_mandelbrot, plot_mandelbrot
 
-__all__ = ["plot_mandelbrot", "plot_julia"]
+__all__ = ["plot_mandelbrot", "is_in_mandelbrot", "plot_julia", "is_in_julia"]

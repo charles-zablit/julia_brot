@@ -1,0 +1,25 @@
+name: Docs
+
+on:
+  release:
+    types: [created]
+
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      - name: Install tox
+        run: python3 -m pip install tox
+      - name: Build pages
+        run: tox -e docs
+      - name: Deploy pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: docs/_build/html

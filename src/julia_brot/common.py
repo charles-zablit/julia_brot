@@ -1,62 +1,54 @@
-import logging
-import sys
-from typing import List, Tuple
-import numpy as np
-import matplotlib.pyplot as plt
 import argparse
+import logging
+import os
+import sys
+from typing import List, Optional, Union
+
+import numpy as np
+from PIL.Image import Image
 
 
-def _normalize(arr) -> List[int]:
-    max_ = max(arr)
-    if max_ == 0:
-        return arr
-    return [e / max_ for e in arr]
+def _normalize(arr: np.ndarray) -> np.ndarray:
+    """Normalize a numpy array between 0 and 1.
+
+    Parameters
+    ----------
+    arr : np.ndarray
+        Array to normalize.
+
+    Returns
+    -------
+    np.ndarray
+        Normalized array.
+    """
+    max_ = arr.max()
+    min_ = arr.min()
+    return (arr - min_) / (max_ - min_)
 
 
-def _init_space(zmin: complex, zmax: complex, pixel_size: float) -> np.ndarray:
-    assert (
-        zmax.imag - zmin.imag > 0
-    ), f"Y axis boundaries are inverted. Got ymax={zmax.imag} < ymin={zmin.imag}"
-    assert (
-        zmax.real - zmin.real > 0
-    ), f"X axis boundaries are inverted. Got xmax={zmax.real} < xmin={zmin.real}"
-    w, h = zmax.imag - zmin.imag, zmax.real - zmin.real
-    y = np.linspace(zmin.imag, zmax.imag, int(w / pixel_size))
-    x = np.linspace(zmin.real, zmax.real, int(h / pixel_size))
+def _handle_img(img: Image, filename: Optional[Union[str, bytes, os.PathLike]]):
+    """Save an `Image` if the `filename` is not None and then show it.
 
-    zx = x[np.newaxis, :]
-    zy = y[:, np.newaxis]
-
-    return zx + zy * 1j
-
-
-def _make_fig(
-    arr: np.ndarray,
-    w: float,
-    h: float,
-    extent: Tuple[float, float, float, float],
-    dpi=int,
-):
-    w, h = _normalize((w, h))
-    figsize = (h * 15, w * 15)
-    fig: plt.Figure
-    ax: plt.Axes
-    fig, ax = plt.subplots(1, 1, figsize=figsize, dpi=dpi)
-    ax.imshow(
-        arr,
-        cmap="binary",
-        extent=extent,
-        interpolation="bicubic",
-    )
-    ax.axis("off")
-    return fig
+    Parameters
+    ----------
+    img : Image
+        Handle to the `Image` to save and show.
+    filename : Optional[Union[str, bytes, os.PathLike]]
+        Path to save the image to. Will not save if None.
+    """
+    if filename is not None:
+        logging.debug(f"Saving image to {filename}")
+        img.save(filename, "PNG", quality=100, subsampling=0)
+    img.show()
 
 
 def _setup_logging(loglevel: int):
-    """Setup basic logging
+    """Setup some simple logging.
 
-    Args:
-      loglevel (int): minimum loglevel for emitting messages
+    Parameters
+    ----------
+    loglevel : int
+        Loglevel to use, as provided by the `logging` module.
     """
     logformat = "[%(asctime)s] %(levelname)s:%(name)s:%(message)s"
     logging.basicConfig(
@@ -64,7 +56,22 @@ def _setup_logging(loglevel: int):
     )
 
 
-def _parse_args(args: List[str], name: str):
+def _parse_args(args: List[str], name: str) -> argparse.Namespace:
+    """Parse command line arguments to be consumed for plotting the Mandelbrot and
+    Julia set.
+
+    Parameters
+    ----------
+    args : List[str]
+        Raw arguments from the shell call.
+    name : str
+        Name of the set we will be plotting.
+
+    Returns
+    -------
+    argparse.Namespace
+        Parsed arguments.
+    """
     parser = argparse.ArgumentParser(description=f"{name} plotting CLI.")
     parser.add_argument(
         "-c",
@@ -118,14 +125,6 @@ def _parse_args(args: List[str], name: str):
         dest="loglevel",
         const=logging.DEBUG,
         default=logging.WARNING,
-    )
-    parser.add_argument(
-        "-v",
-        "--verbose",
-        help="Set logging level to INFO",
-        action="store_const",
-        dest="loglevel",
-        const=logging.INFO,
     )
 
     return parser.parse_args(args)

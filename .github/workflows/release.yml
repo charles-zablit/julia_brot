@@ -1,0 +1,68 @@
+name: Release
+
+on:
+  release:
+    types:
+      - created
+
+jobs:
+  build:
+    name: 'Build ${{ matrix.target }}'
+    runs-on: '${{ matrix.os }}'
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: windows-latest
+            target: x86_64-pc-windows-msvc
+          - os: macos-latest
+            target: x86_64-apple-darwin
+          - os: ubuntu-20.04
+            target: x86_64-unknown-linux-gnu
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      - name: Install tox
+        run: python3 -m pip install tox
+      - name: Build
+        run: tox -e build
+      - name: Rename artifacts Linux
+        if: ${{ !contains(matrix.os, 'windows') }}
+        run: |
+          folder_path="dist"
+          tar_file=$(find $folder_path -name '*.tar.gz' -type f)
+          mv "$tar_file" "$folder_path/julia_brot-${{ github.event.release.tag_name }}-${{ matrix.target }}.tar.gz"
+      - name: Rename artifacts Windows
+        if: ${{ contains(matrix.os, 'windows') }}
+        run: |
+          $folder_path = "dist"
+          $tar_file = Get-ChildItem -Path $folder_path -Filter "*.tar.gz" | Select-Object -First 1
+          Move-Item -Path $tar_file.FullName -Destination "$folder_path/julia_brot-${{ github.event.release.tag_name }}-${{ matrix.target }}.tar.gz"
+        shell: powershell
+      - name: Upload tarballs artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: '${{ matrix.target }}-tar'
+          path: dist/*.tar.gz
+      - name: Upload wheel artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: '${{ matrix.target }}-whl'
+          path: dist/*.whl
+
+  github:
+    name: Publish releases
+    needs:
+      - build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/download-artifact@v3
+      - name: Publish binaries
+        run: |
+          gh release upload ${{ github.ref_name }} $(find . -iname *.tar.gz)
+          gh release upload ${{ github.ref_name }} $(find . -iname *.whl)
+        env:
+          GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
